@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo à nossa plataforma</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bem-vindo à nossa plataforma, {{ .Email }}!</h1>
+    <p>Estamos muito felizes em tê-lo conosco. Aqui está o seu código de verificação:</p>
+    <h2>{{ .Code }}</h2>
+    <p>Para finalizar o seu cadastro, clique no link abaixo:</p>
+    <a href="{{ .ConfirmationURL }}">Confirmar cadastro</a>
+    <p>Se você não se inscreveu na nossa plataforma, ignore este e-mail.</p>
+    <p>Atenciosamente, <br> Equipe {{ .SiteURL }}</p>
+  </div>
+</body>
+</html>
